@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <IntegerNet_SolrCompatibilityCobby>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <IntegerNet_Solr/>
+                <Mash2_Cobby/>
+            </depends>
+        </IntegerNet_SolrCompatibilityCobby>
+    </modules>
+</config>

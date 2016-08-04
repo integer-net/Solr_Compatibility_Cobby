@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <IntegerNet_SolrCompatibilityCobby>
+            <version>0.1.0</version>
+        </IntegerNet_SolrCompatibilityCobby>
+    </modules>
+    <global>
+        <models>
+            <integernet_solr_compatibility_cobby>
+                <class>IntegerNet_SolrCompatibilityCobby_Model</class>
+            </integernet_solr_compatibility_cobby>
+        </models>
+        <events>
+            <cobby_after_product_import>
+                <observers>
+                    <integernet_solr_compatibility_cobby>
+                        <type>singleton</type>
+                        <class>integernet_solr_compatibility_cobby/observer</class>
+                        <method>reindexSolrAfterCobbyImport</method>
+                    </integernet_solr_compatibility_cobby>
+                </observers>
+            </cobby_after_product_import>
+        </events>
+    </global>
+</config>
