@@ -32,6 +32,6 @@ class IntegerNet_SolrCompatibilityCobby_Model_Observer
             return;
         }
         
-        Mage::helper('integernet_solr/factory')->getProductIndexer()->reindex($productIds);
+        Mage::helper('integernet_solr')->factory()->getProductIndexer()->reindex($productIds);
     }
 }
