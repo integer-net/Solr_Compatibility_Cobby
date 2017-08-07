@@ -24,10 +24,13 @@ class IntegerNet_SolrCompatibilityCobby_Model_Observer
         }
         
         $productIds = array();
-        foreach ($observer->getEntities() as $sku => $productData) {
-            $productIds[] = $productData['entity_id'];
+        $transport = $observer->getEvent()->getTransport();
+        foreach ($transport->getRows() as $row) {
+            if(isset($row['_id'])) {
+                $productIds[] = $row['_id'];
+            }
         }
-        
+
         if (empty($productIds)) {
             return;
         }

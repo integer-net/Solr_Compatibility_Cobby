@@ -12,7 +12,7 @@
             </integernet_solr_compatibility_cobby>
         </models>
         <events>
-            <cobby_after_product_import>
+            <cobby_import_product_import_after>
                 <observers>
                     <integernet_solr_compatibility_cobby>
                         <type>singleton</type>
@@ -20,7 +20,7 @@
                         <method>reindexSolrAfterCobbyImport</method>
                     </integernet_solr_compatibility_cobby>
                 </observers>
-            </cobby_after_product_import>
+            </cobby_import_product_import_after>
         </events>
     </global>
 </config>
