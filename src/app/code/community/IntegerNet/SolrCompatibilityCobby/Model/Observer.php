@@ -1,4 +1,5 @@
 <?php
+
 /**
  * integer_net Magento Module
  *
@@ -22,16 +23,17 @@ class IntegerNet_SolrCompatibilityCobby_Model_Observer
         if ($indexer->getMode() != Mage_Index_Model_Process::MODE_REAL_TIME) {
             return;
         }
-        
+
         $productIds = array();
-        foreach ($observer->getEntities() as $sku => $productData) {
-            $productIds[] = $productData['entity_id'];
+        $entities = $observer->getEvent()->getEntities();
+        foreach ($entities as $row) {
+            $productIds[] = $row['product_id'];
         }
-        
+
         if (empty($productIds)) {
             return;
         }
-        
+
         Mage::helper('integernet_solr')->factory()->getProductIndexer()->reindex($productIds);
     }
 }
