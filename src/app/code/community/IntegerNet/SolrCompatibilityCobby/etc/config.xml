@@ -2,7 +2,7 @@
 <config>
     <modules>
         <IntegerNet_SolrCompatibilityCobby>
-            <version>0.1.0</version>
+            <version>0.2.0</version>
         </IntegerNet_SolrCompatibilityCobby>
     </modules>
     <global>
@@ -12,7 +12,7 @@
             </integernet_solr_compatibility_cobby>
         </models>
         <events>
-            <cobby_after_product_import>
+            <cobby_import_product_finished>
                 <observers>
                     <integernet_solr_compatibility_cobby>
                         <type>singleton</type>
@@ -20,7 +20,7 @@
                         <method>reindexSolrAfterCobbyImport</method>
                     </integernet_solr_compatibility_cobby>
                 </observers>
-            </cobby_after_product_import>
+            </cobby_import_product_finished>
         </events>
     </global>
 </config>
